@@ -25,6 +25,10 @@ def emot_detector():
     sadness = response['sadness']
     dominant_emotion = response['dominant_emotion']
 
+    # Manejo de errores: si no hay emoción dominante, la entrada fue inválida
+    if dominant_emotion is None:
+        return "¡Texto inválido! ¡Por favor, inténtalo de nuevo!"
+
     # Devolver el texto en el formato solicitado
     return (
         f"Para la declaración dada, la respuesta del sistema es "
